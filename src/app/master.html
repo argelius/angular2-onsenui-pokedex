@@ -1,0 +1,35 @@
+<ons-toolbar>
+  <div class="center">Pokedex</div>
+</ons-toolbar>
+
+<ons-list>
+  <ons-list-item
+    tappable
+    modifier="chevron"
+    *ngFor="let p of pokemon"
+    (click)="push(p)"
+  >
+    <div class="left">
+      <img class="pokemon-icon" src="/images/pokemon/icons/{{ p.id }}.png">
+    </div>
+    <div class="center">
+      #{{ p.id }}
+      {{ p.name | capitalize }}
+    </div>
+    <div class="right">
+    </div>
+  </ons-list-item>
+</ons-list>
+
+<ons-button
+  modifier="large quiet"
+  (disabled)="isLoading"
+  (click)="loadMore()"
+>
+  <span [hidden]="isLoading">
+    Load more
+  </span>
+  <span [hidden]="!isLoading">
+    Loading...
+  </span>
+</ons-button>

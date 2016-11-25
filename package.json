@@ -1,0 +1,20 @@
+{
+  "name": "onsenui-v2-angular2-navigation",
+  "version": "2.2.2+20161117.1",
+  "description": "",
+  "dependencies": {
+    "@angular/common": "2.1.2",
+    "@angular/compiler": "2.1.2",
+    "@angular/core": "2.1.2",
+    "@angular/http": "2.1.2",
+    "@angular/platform-browser": "2.1.2",
+    "@angular/platform-browser-dynamic": "2.1.2",
+    "angular2-onsenui": "1.0.0-rc.1",
+    "core-js": "^2.4.1",
+    "onsenui": "^2.0.0",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "typescript": "^2.0.9",
+    "zone.js": "0.6.21"
+  }
+}

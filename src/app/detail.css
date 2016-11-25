@@ -1,0 +1,11 @@
+.content {
+  padding: 20px 0;
+}
+
+.pokemon-sprite {
+  width: 192px;
+  height: 192px;
+  margin: 0 auto;
+  display: block;
+  image-rendering: pixelated;
+}
