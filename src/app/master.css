@@ -3,3 +3,12 @@
   height: 30px;
   image-rendering: pixelated;
 }
+
+.pokeball {
+  image-rendering: pixelated;
+}
+
+.caught {
+  padding: 0 20px;
+  line-height: 44px;
+}

@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {OnsNavigator, Params} from 'angular2-onsenui';
 
 import {PokedexService} from './pokedex.service';
+import {CaughtPokemonService} from './caught-pokemon.service';
+
 import {Pokemon} from './pokemon';
 import {PokemonDetails} from './pokemon-details';
 
@@ -18,9 +20,21 @@ export class DetailPage {
   constructor(
     private navi: OnsNavigator,
     private params: Params,
-    private pokedexService: PokedexService
+    private pokedexService: PokedexService,
+    private caughtPokemon: CaughtPokemonService
   ) {
+    /**
+     * Get the Pokemon that was pushed.
+     */
     this.pokemon = params.data.pokemon;
+  }
+
+  onChange(e, pokemon) {
+    if (e.target.checked) {
+      this.caughtPokemon.add(pokemon.id);
+    } else {
+      this.caughtPokemon.remove(pokemon.id);
+    }
   }
 
   ngOnInit() {

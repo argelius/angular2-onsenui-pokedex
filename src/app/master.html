@@ -17,6 +17,11 @@
       {{ p.name | capitalize }}
     </div>
     <div class="right">
+      <img
+        class="pokeball"
+        src="/images/pokemon/pokeball.png"
+        *ngIf="caughtPokemon.has(p.id)"
+      >
     </div>
   </ons-list-item>
 </ons-list>
@@ -33,3 +38,9 @@
     Loading...
   </span>
 </ons-button>
+
+<ons-bottom-toolbar>
+  <div class="caught">
+    {{ caughtPokemon.count }} Pokémon caught
+  </div>
+</ons-bottom-toolbar>

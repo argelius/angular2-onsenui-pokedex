@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {OnsNavigator} from 'angular2-onsenui';
 
 import {PokedexService} from './pokedex.service';
+import {CaughtPokemonService} from './caught-pokemon.service';
+
 import {Pokemon} from './pokemon';
 import {DetailPage} from './detail';
 
@@ -18,7 +20,8 @@ export class MasterPage implements OnInit {
 
   constructor(
     private navi: OnsNavigator,
-    private pokedexService: PokedexService
+    private pokedexService: PokedexService,
+    private caughtPokemon: CaughtPokemonService
   ) {
   }
 
@@ -33,7 +36,7 @@ export class MasterPage implements OnInit {
 
     this.isLoading = true;
 
-    this.pokedexService.getPokemon(this.pokemon.length, 100)
+    this.pokedexService.getPokemon(this.pokemon.length, 20)
       .then(pokemon => {
         this.pokemon = this.pokemon.concat(pokemon);
         this.isLoading = false;

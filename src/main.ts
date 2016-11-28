@@ -10,6 +10,7 @@ import {HttpModule} from '@angular/http';
 import {OnsenModule, OnsNavigator, Params} from 'angular2-onsenui';
 
 import {PokedexService} from './app/pokedex.service';
+import {CaughtPokemonService} from './app/caught-pokemon.service';
 import {CapitalizePipe} from './app/capitalize.pipe';
 
 import {MyApp} from './app/app';
@@ -37,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
     MasterPage,
     DetailPage
   ],
-  providers: [PokedexService],
+  providers: [PokedexService, CaughtPokemonService],
   bootstrap: [MyApp],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
