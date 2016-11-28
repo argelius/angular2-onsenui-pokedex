@@ -10,7 +10,7 @@
     (click)="push(p)"
   >
     <div class="left">
-      <img class="pokemon-icon" src="images/pokemon/icons/{{ p.id }}.png">
+      <img class="pokemon-icon" src="/images/pokemon/icons/{{ p.id }}.png">
     </div>
     <div class="center">
       #{{ p.id }}
@@ -19,7 +19,7 @@
     <div class="right">
       <img
         class="pokeball"
-        src="images/pokemon/pokeball.png"
+        src="/images/pokemon/pokeball.png"
         *ngIf="caughtPokemon.has(p.id)"
       >
     </div>
