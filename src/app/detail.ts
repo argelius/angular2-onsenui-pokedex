@@ -13,6 +13,7 @@ import {PokemonDetails} from './pokemon-details';
 export class DetailPage {
   pokemon: Pokemon;
   details: PokemonDetails;
+  loaded: boolean = false;
 
   constructor(
     private navi: OnsNavigator,
@@ -25,6 +26,7 @@ export class DetailPage {
   ngOnInit() {
     this.pokedexService.getPokemonDetails(this.pokemon.id)
       .then(details => {
+        this.loaded = true;
         this.details = details;
       });
   }

@@ -1,11 +1,144 @@
 .content {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
-.pokemon-sprite {
+.sprite {
   width: 192px;
   height: 192px;
   margin: 0 auto;
   display: block;
   image-rendering: pixelated;
+  animation: 0.5s ease-in 0.4s jump;
+  margin-bottom: -10px;
+}
+
+.progress {
+  display: block;
+  margin: 0 auto;
+  width: 42px;
+}
+
+.types {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 26px;
+  font-size: 12px;
+  padding: 0 16px;
+  text-align: space-between;
+  border-radius: 1px;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #68a090;
+  margin: 0 6px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+.type-normal {
+  background-color: #a8a878;
+}
+
+.type-fire {
+  background-color: #f08030;
+}
+
+.type-fighting {
+  background-color: #c03028;
+}
+
+.type-water {
+  background-color: #6890f0;
+}
+
+.type-flying {
+  background-color: #a890f0;
+}
+
+.type-grass {
+  background-color: #78c850;
+}
+
+.type-poison {
+  background-color: #a040a0;
+}
+
+.type-electric {
+  background-color: #f8d030;
+}
+
+.type-ground {
+  background-color: #e0c068;
+}
+
+.type-psychic {
+  background-color: #f85888;
+}
+
+.type-rock {
+  background-color: #b8a038;
+}
+
+.type-ice {
+  background-color: #98d8d8;
+}
+
+.type-bug {
+  background-color: #a8b820;
+}
+
+.type-dragon {
+  background-color: #7038f8;
+}
+
+.type-ghost {
+  background-color: #705898;
+}
+
+.type-dark {
+  background-color: #705848;
+}
+
+.type-steel {
+  background-color: #b8b8d0;
+}
+
+.type-fairy {
+  background-color: #ee99ac;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 30px 30px;
+}
+
+.stat-label {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+}
+
+.stat-value {
+  font-size: 16px;
+}
+
+@keyframes jump {
+    0%   {transform: translate3d(0, 0, 0);}
+    25%  {transform: translate3d(0, -6px, 0);}
+    50%  {transform: translate3d(0, 0, 0);}
+    75%  {transform: translate3d(0, -6px, 0);}
+    100% {transform: translate3d(0, 0, 0);}
 }

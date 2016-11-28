@@ -33,7 +33,7 @@ export class MasterPage implements OnInit {
 
     this.isLoading = true;
 
-    this.pokedexService.getPokemon(this.pokemon.length, 1)
+    this.pokedexService.getPokemon(this.pokemon.length, 10)
       .then(pokemon => {
         this.pokemon = this.pokemon.concat(pokemon);
         this.isLoading = false;

@@ -25,8 +25,37 @@ export class PokedexService {
   }
 
   getPokemonDetails(id: number): Promise<PokemonDetails> {
-    return this.http.get(`${this.baseUrl}/${id}/`)
+    let details;
+
+    return this.http.get(`${this.baseUrl}${id}/`)
       .toPromise()
-      .then(response => response.json().results);
+      .then(response => response.json())
+      .then(details => {
+        const types = details.types
+          .map(t => {
+            return t.type.name
+          });
+
+        details = {
+          id: details.id,
+          name: details.name,
+          weight: details.weight,
+          height: details.height,
+          types
+        };
+
+        /**
+         * We need to make another call
+         * to get the description text.
+         */
+        return this.http
+          .get(details.species.url)
+          .toPromise();
+      })
+      .then(response => response.json())
+      .then(species => {
+        console.log(species);
+        return details;
+      });
   }
 }
