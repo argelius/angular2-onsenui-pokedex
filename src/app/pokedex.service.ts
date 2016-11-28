@@ -25,7 +25,7 @@ export class PokedexService {
   }
 
   getPokemonDetails(id: number): Promise<PokemonDetails> {
-    let details;
+    let tmp;
 
     return this.http.get(`${this.baseUrl}${id}/`)
       .toPromise()
@@ -36,7 +36,7 @@ export class PokedexService {
             return t.type.name
           });
 
-        details = {
+        tmp = {
           id: details.id,
           name: details.name,
           weight: details.weight,
@@ -54,8 +54,24 @@ export class PokedexService {
       })
       .then(response => response.json())
       .then(species => {
-        console.log(species);
-        return details;
+        /**
+         * Find the latest English
+         * description.
+         */
+        let description = '';
+        const entries = species.flavor_text_entries;
+
+        for (let i = 0; i < entries.length; i++) {
+          const entry = entries[i];
+
+          if (entry.language.name === 'en') {
+            description = entry.flavor_text;
+            break;
+          }
+        }
+
+        tmp.description = description;
+        return tmp;
       });
   }
 }

@@ -4,4 +4,5 @@ export class PokemonDetails {
   weight: number;
   height: number;
   types: string[];
+  description: string;
 }

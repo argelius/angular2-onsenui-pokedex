@@ -14,8 +14,12 @@
 
 .progress {
   display: block;
-  margin: 0 auto;
+  margin: 100px auto;
   width: 42px;
+}
+
+.info {
+  animation: 0.3s ease-in 0s fade;
 }
 
 .types {
@@ -127,12 +131,23 @@
 }
 
 .stat-label {
-  font-size: 20px;
+  font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
   margin: 0 0 8px 0;
 }
 
 .stat-value {
   font-size: 16px;
+}
+
+.description {
+	margin: 10px;
+	padding: 14px;
+	border: 1px solid black;
+	border-radius: 8px;
+	font-size: 20px;
+	background-color: #fff;
 }
 
 @keyframes jump {
@@ -141,4 +156,9 @@
     50%  {transform: translate3d(0, 0, 0);}
     75%  {transform: translate3d(0, -6px, 0);}
     100% {transform: translate3d(0, 0, 0);}
+}
+
+@keyframes fade {
+  0%   {opacity: 0;}
+  100% {opacity: 1;} 
 }
