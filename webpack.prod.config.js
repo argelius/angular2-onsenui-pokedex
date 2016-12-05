@@ -65,7 +65,7 @@ module.exports = {
       }
     }, {
       test: /\.html$/,
-      loader: 'html'
+      loader: 'html?minimize=false'
     }, {
       test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
       loader: 'file?name=assets/[name].[hash].[ext]'
@@ -112,16 +112,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/public/index.html.ejs',
-      chunksSortMode: 'dependency',
-      externalCSS: ['components/loader.css'],
-      externalJS: ['components/loader.js'],
-      minify: {
-        caseSensitive: true,
-        collapseWhitespace: true,
-        conservativeCollapse: true,
-        removeAttributeQuotes: true,
-        removeComments: true
-      }
+      chunksSortMode: 'dependency'
     }),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
