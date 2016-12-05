@@ -14,7 +14,6 @@ import {CaughtPokemonService} from './app/caught-pokemon.service';
 import {CapitalizePipe} from './app/capitalize.pipe';
 
 import {MyApp} from './app/app';
-import {MasterPage} from './app/master';
 import {DetailPage} from './app/detail';
 
 // Enable production mode when in production mode.
@@ -30,12 +29,10 @@ if (process.env.NODE_ENV === 'production') {
   ],
   declarations: [
     MyApp,
-    MasterPage,
     DetailPage,
     CapitalizePipe
   ],
   entryComponents: [
-    MasterPage,
     DetailPage
   ],
   providers: [PokedexService, CaughtPokemonService],
