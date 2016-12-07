@@ -26,7 +26,9 @@ export class DetailPage {
     /**
      * Get the Pokemon that was pushed.
      */
-    this.pokemon = params.data.pokemon;
+    let tmp = <any>{};
+    tmp = params;
+    this.pokemon = tmp.data.pokemon;
   }
 
   onChange(e, pokemon) {
